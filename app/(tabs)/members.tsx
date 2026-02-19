@@ -1,3 +1,10 @@
+/*
+members.tsx - Members Screen for Tree-ver App
+Author: JH
+
+1.00 JH Initial release with members content and styling.
+*/
+
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default function Members() {

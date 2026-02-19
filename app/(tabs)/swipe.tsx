@@ -1,3 +1,11 @@
+/*
+swipe.tsx - Swipeable Tree Cards for Tree-ver App
+Author: JH
+
+1.00 JH Initial release with swipeable tree cards and styling.
+*/
+
+
 import { Image, StyleSheet, Text, View } from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 

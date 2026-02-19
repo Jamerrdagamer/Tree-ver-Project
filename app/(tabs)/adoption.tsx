@@ -1,11 +1,28 @@
+/*
+adoption.tsx - Tree Adoption Screen for Tree-ver App
+Author: JH
+
+1.00 JH Initial release with tree adoption functionality and styling.
+*/
+
 import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function Adoption() {
   const trees = [
-    { name: 'Ancient Oak', description: 'Strong and wise tree, over 200 years old.' },
-    { name: 'Sacred Cedar', description: 'Guardian of the forest, known for purification.' },
-    { name: 'Willow of Healing', description: 'Provides calm and emotional balance.' },
+  { name:'Common Oak', description: 'Large, long-lived, native deciduous tree growing up to 40m tall with a broad, spreading crown and rugged, fissured bark.' },
+  { name:'Beech', description: 'A large, deciduous tree, reaching up to 40 meters in height with a dense, spreading crown.' },
+  { name:'Ash', description: 'Smooth, greenish-grey bark that fissures with age, distinct black winter buds, and pinnately compound leaves.' },
+  { name:'Field Maple', description: 'A small-to-medium, deciduous, native British tree (up to 20m) often found in hedgerows and woodlands.' },
+  { name:'Hazel', description: 'A small, deciduous, multi-stemmed shrub or tree native to Europe, Asia, and North Africa, often found in woodland understories.' },
+  { name:'Wild Cherry', description: 'Fast-growing, deciduous native tree known for its smooth, peeling reddish-brown bark with horizontal, creamy-white lenticels.' },
+  { name:'Alder', description: 'Fast-growing, deciduous tree often found in wet, boggy areas or along riverbanks.' },
+  { name:'Hornbeam', description: 'Smooth, grey, "muscular" or fluted trunk and incredibly hard timber.' },
+  { name:'London Plane', description: 'A massive, long-lived deciduous tree (30–40m) renowned for its mottled, exfoliating bark—patterned in grey, green, and white—and high tolerance for pollution and urban conditions.' },
+  { name:'Cypress Oak', description: 'Narrow, upright, broom-like, or pyramidal growth habit.' },
   ];
+
+
+  
 
   const handleAdopt = (treeName: string) => {
     Alert.alert('Adoption Successful', `You have adopted the ${treeName}! 🌳`);

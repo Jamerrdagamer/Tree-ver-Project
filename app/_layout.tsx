@@ -1,3 +1,10 @@
+/*
+_layout.tsx - Root Layout for Tree-ver App
+Author: JH
+
+1.00 JH Initial release with basic tab navigation and icons.
+*/
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Stack } from 'expo-router';
 import { useEffect, useState } from 'react';

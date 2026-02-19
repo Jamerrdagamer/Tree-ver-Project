@@ -1,3 +1,10 @@
+/*
+modal.tsx - Modal Screen for Tree-ver App
+Author: JH
+
+1.00 JH Initial release with basic modal screen content and styling.
+*/
+
 import { Link } from 'expo-router';
 import { StyleSheet } from 'react-native';
 

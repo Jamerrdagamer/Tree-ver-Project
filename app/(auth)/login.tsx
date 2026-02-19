@@ -1,3 +1,10 @@
+/*
+Login Screen for Tree-ver App
+Author: JH
+
+1.00 JH Initial release with basic login functionality.
+*/
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
 import { useState } from 'react';

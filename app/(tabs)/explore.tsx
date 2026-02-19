@@ -1,27 +1,66 @@
+/*
+explore.tsx - Explore Screen for Tree-ver App
+Author: JH
+
+1.00 JH Initial release with sacred trees content and styling.
+*/
+
 import { ScrollView, StyleSheet, Text } from 'react-native';
 
 export default function Explore() {
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Sacred Trees</Text>
-
-      <Text style={styles.tree}>🌳 The Oak</Text>
+      <Text style={styles.tree}>Common Oak</Text>
       <Text style={styles.description}>
-        Symbol of endurance and ancient wisdom.
+        Large, long-lived, native deciduous tree growing up to 40m tall with a broad, spreading crown and rugged, fissured bark.
       </Text>
 
-      <Text style={styles.tree}>🌲 The Cedar</Text>
+      <Text style={styles.tree}>Beech</Text>
       <Text style={styles.description}>
-        Protector tree, representing strength and purification.
+        A large, deciduous tree, reaching up to 40 meters in height with a dense, spreading crown
+       </Text>
+
+      <Text style={styles.tree}>Ash</Text>
+      <Text style={styles.description}>
+        Smooth, greenish-grey bark that fissures with age, distinct black winter buds, and pinnately compound leaves.
       </Text>
 
-      <Text style={styles.tree}>🌿 The Willow</Text>
+      <Text style={styles.tree}>Field Maple</Text>
       <Text style={styles.description}>
-        Tree of intuition and emotional healing.
+        A small-to-medium, deciduous, native British tree (up to 20m) often found in hedgerows and woodlands.
       </Text>
+
+        <Text style={styles.tree}>Hazel</Text> 
+      <Text style={styles.description}>
+        A small, deciduous, multi-stemmed shrub or tree native to Europe, Asia, and North Africa, often found in woodland understories.
+      </Text>
+      
+      <Text style={styles.tree}>Wild Cherry</Text> 
+      <Text style={styles.description}>
+        Fast-growing, deciduous native tree known for its smooth, peeling reddish-brown bark with horizontal, creamy-white lenticels.
+      </Text>
+
+      <Text style={styles.tree}>Alder</Text>
+      <Text style={styles.description}>
+        Fast-growing, deciduous tree often found in wet, boggy areas or along riverbanks.
+      </Text>
+
+      <Text style={styles.tree}>Hornbeam</Text>
+      <Text style={styles.description}>
+        Smooth, grey, "muscular" or fluted trunk and incredibly hard timber.
+      </Text>
+
+      <Text style={styles.tree}>London Plane</Text>
+      <Text style={styles.description}>
+        A massive, long-lived deciduous tree (30–40m) renowned for its mottled, exfoliating bark—patterned in grey, green, and white—and high tolerance for pollution and urban conditions.
+      </Text>
+
+  
     </ScrollView>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, backgroundColor: '#0f2f23' },

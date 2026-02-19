@@ -1,3 +1,11 @@
+/*
+_layout.tsx - Tab Layout for Tree-ver App
+Author: JH
+
+1.00 JH Initial release with basic tab navigation and icons.
+*/
+
+
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 
@@ -16,7 +24,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'The Grove',
+          title: 'Tree-ver',
           tabBarIcon: ({ color, size }) => <Ionicons name="leaf" size={size} color={color} />,
         }}
       />
@@ -24,24 +32,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'Sacred Trees',
+          title: 'Our Trees',
           tabBarIcon: ({ color, size }) => <Ionicons name="flower" size={size} color={color} />,
-        }}
-      />
-
-      <Tabs.Screen
-        name="rituals"
-        options={{
-          title: 'Rituals',
-          tabBarIcon: ({ color, size }) => <Ionicons name="flame" size={size} color={color} />,
-        }}
-      />
-
-      <Tabs.Screen
-        name="doctrine"
-        options={{
-          title: 'Teachings',
-          tabBarIcon: ({ color, size }) => <Ionicons name="book" size={size} color={color} />,
         }}
       />
 
