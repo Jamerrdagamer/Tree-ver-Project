@@ -93,3 +93,14 @@ export default function App() {
       </SafeAreaProvider>
   )
 }
+
+// Styles used for the loading screen component
+const styles = StyleSheet.create({
+  loadingScreen: {
+    flex: 1, // Makes the container take up the full screen
+    alignItems: 'center', //Centres child elements horizontally
+    justifyContent: 'center', // Centers child elements vertically
+    backgroundColor: COLOURS.background, // Sets the background colour using the theme colours
+  },
+})
+
