@@ -1,15 +1,16 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import {
-    ActivityIndicator,
-    ScrollView,
+    View,
     Text,
     TextInput,
     TouchableOpacity,
-    View
+    StyleSheet,
+    ScrollView,
+    ActivityIndicator,
 } from 'react-native'
 
-import { COLOURS } from '../../constants/theme'
 import { supabase } from '../../lib/supabase'
+import { COLOURS } from '../../constants/theme'
 
 export default function Login({ navigation }) {
     const [email, setEmail] = useState('')
