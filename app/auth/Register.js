@@ -242,3 +242,144 @@ export default function Register({ navigation }) {
         </ScrollView>
     )
 }
+
+
+// Creates a stylesheet object for the screen UI
+const styles = StyleSheet.create({
+
+    // Main scrollable screen background
+    scrollView: {
+        backgroundColor: COLOURS.background,
+    },
+
+    // Inner content container spacing and layout
+    scrollContent: {
+        paddingHorizontal: 24,
+        paddingTop: 60,
+        paddingBottom: 40,
+        flexGrow: 1,
+    },
+
+    // Main application title styling
+    appTitle: {
+        fontSize: 36,
+        fontWeight: 'bold',
+        color: COLOURS.primary,
+        textAlign: 'center',
+        marginBottom: 8,
+    },
+
+    // Main page heading styling
+    heading: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: COLOURS.textDark,
+        textAlign: 'center',
+        marginBottom: 8,
+    },
+
+    // Container used to display error messages
+    errorBox: {
+        backgroundColor: '#FDECEA',
+        borderRadius: 8,
+        padding: 12,
+        marginBottom: 16,
+    },
+
+    // Error message text styling
+    errorText: {
+        color: COLOURS.error,
+        fontSize: 14,
+        textAlign: 'center',
+    },
+
+    // Label displayed above form inputs
+    label: {
+        fontSize: 14,
+        fontWeight: '600',
+        color: COLOURS.textDark,
+        marginBottom: 6,
+        marginTop: 16,
+    },
+
+    // Standard text input styling
+    input: {
+        backgroundColor: COLOURS.backgroundSecondary,
+        borderWidth: 1,
+        borderColor: COLOURS.textLight,
+        borderRadius: 10,
+        paddingHorizontal: 14,
+        paddingVertical: 12,
+        fontSize: 15,
+        color: COLOURS.textDark,
+    },
+
+    // Container for password input and visibility toggle
+    passwordRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: COLOURS.backgroundSecondary,
+        borderWidth: 1,
+        borderColor: COLOURS.textLight,
+        borderRadius: 10,
+    },
+
+    // Password input field styling
+    passwordInput: {
+        flex: 1, // Takes remaining space
+        paddingHorizontal: 14,
+        paddingVertical: 12,
+        fontSize: 15,
+        color: COLOURS.textDark,
+    },
+
+    // Show/hide password button container
+    showHideButton: {
+        paddingHorizontal: 14,
+    },
+
+    // Show/hide password button text styling
+    showHideText: {
+        color: COLOURS.primary,
+        fontWeight: '600',
+        fontSize: 14,
+    },
+
+    // Small helper or hint text styling
+    hint: {
+        fontSize: 12,
+        color: COLOURS.textLight,
+    },
+
+    // Main action button styling
+    button: {
+        backgroundColor: COLOURS.primary,
+        borderRadius: 10,
+        paddingVertical: 15,
+        alignItems: 'center',
+        marginTop: 24,
+        marginBottom: 16,
+    },
+
+    // Text displayed inside buttons
+    buttonText: {
+        color: '#FFFFFF',
+        fontWeight: 'bold',
+    },
+
+    // Container for links such as "Forgot Password?"
+    linkRow: {
+        alignItems: 'flex-end',
+    },
+
+// Standard link text styling
+linkText: {
+        color: COLOURS.textGrey,
+    },
+
+    // Highlighted clickable link text
+    linkHighlight: {
+        color: COLOURS.primary,
+    },
+
+})
