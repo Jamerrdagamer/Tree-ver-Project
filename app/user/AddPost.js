@@ -813,3 +813,386 @@ export default function AddPost() {
 
 
 }
+
+const styles = StyleSheet.create({
+
+    // The outer scrollable container
+    scrollView: {
+        backgroundColor: COLOURS.background,
+    },
+
+    // Controls padding inside the scroll view
+    scrollContent: {
+        paddingBottom: 40,
+        flexGrow: 1,
+    },
+
+    // The thin green strip at the top
+    header: {
+        backgroundColor: COLOURS.primary,
+        paddingTop: 50,
+        paddingBottom: 6,
+        marginBottom: 20,
+    },
+
+    // The Add Post screen title
+    screenTitle: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        color: COLOURS.textDark,
+        paddingHorizontal: 16,
+        marginBottom: 16,
+    },
+
+    // The red error box
+    errorBox: {
+        backgroundColor: '#FDECEA',
+        borderRadius: 8,
+        padding: 12,
+        marginHorizontal: 16,
+        marginBottom: 16,
+    },
+
+    // The error text
+    errorText: {
+        color: COLOURS.error,
+        fontSize: 14,
+        textAlign: 'center',
+    },
+
+    // The section label above each form section
+    sectionLabel: {
+        fontSize: 15,
+        fontWeight: '600',
+        color: COLOURS.textDark,
+        paddingHorizontal: 16,
+        marginBottom: 6,
+        marginTop: 16,
+    },
+
+    // The small hint text below some section labels
+    sectionHint: {
+        fontSize: 12,
+        color: COLOURS.textLight,
+        paddingHorizontal: 16,
+        marginBottom: 10,
+    },
+
+    // The input box for tree name
+    input: {
+        backgroundColor: COLOURS.backgroundSecondary,
+        borderWidth: 1,
+        borderColor: COLOURS.textLight,
+        borderRadius: 10,
+        paddingHorizontal: 14,
+        paddingVertical: 12,
+        fontSize: 15,
+        color: COLOURS.textDark,
+        marginHorizontal: 16,
+    },
+
+    // The wrapper around the photo preview and retake button
+    photoContainer: {
+        marginHorizontal: 16,
+    },
+
+    // The photo preview image
+    photoPreview: {
+        width: '100%',
+        height: 200,
+        borderRadius: 12,
+        marginBottom: 8,
+    },
+
+    // The species preview box shown below the photo
+    speciesPreviewBox: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: COLOURS.primaryLight,
+        borderRadius: 8,
+        padding: 10,
+        marginBottom: 8,
+        gap: 8,
+    },
+
+    // The species text inside the preview box
+    speciesPreviewText: {
+        fontSize: 13,
+        color: COLOURS.primary,
+        fontWeight: '600',
+        flex: 1,
+    },
+
+    // The retake button
+    retakeButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+    },
+
+    // The Retake text
+    retakeText: {
+        fontSize: 14,
+        color: COLOURS.primary,
+        fontWeight: '600',
+    },
+
+    // The camera button shown when no photo has been taken
+    cameraButton: {
+        backgroundColor: COLOURS.backgroundSecondary,
+        borderRadius: 12,
+        borderWidth: 2,
+        borderColor: COLOURS.border,
+        borderStyle: 'dashed',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 180,
+        marginHorizontal: 16,
+        gap: 8,
+    },
+
+    // The Tap to take a photo text
+    cameraButtonText: {
+        fontSize: 14,
+        color: COLOURS.textLight,
+    },
+
+    // The smaller subtext below the camera button text
+    cameraSubText: {
+        fontSize: 12,
+        color: COLOURS.textLight,
+        textAlign: 'center',
+        paddingHorizontal: 20,
+    },
+
+    // The location row
+    locationRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 16,
+        gap: 6,
+    },
+
+    // The location text
+    locationText: {
+        fontSize: 14,
+        color: COLOURS.textGrey,
+        flex: 1,
+    },
+
+    // The tree match info box
+    treeMatchBox: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: COLOURS.primaryLight,
+        borderRadius: 8,
+        padding: 10,
+        marginHorizontal: 16,
+        marginTop: 8,
+        gap: 8,
+    },
+
+    // The tree match text
+    treeMatchText: {
+        fontSize: 13,
+        color: COLOURS.primary,
+        fontWeight: '600',
+        flex: 1,
+    },
+
+    // The grid of tag buttons
+    tagsGrid: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        paddingHorizontal: 16,
+        gap: 8,
+    },
+
+    // Each individual tag button
+    tagButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderRadius: 999,
+        paddingHorizontal: 14,
+        paddingVertical: 8,
+        gap: 6,
+    },
+
+    // The text inside each tag button
+    tagButtonText: {
+        fontSize: 13,
+        fontWeight: '600',
+    },
+
+    // The row of tags on the preview screen
+    tagsRow: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        paddingHorizontal: 16,
+        gap: 8,
+        marginBottom: 12,
+        marginTop: 12,
+    },
+
+    // Each tag badge on the preview screen
+    tag: {
+        borderRadius: 999,
+        paddingHorizontal: 12,
+        paddingVertical: 5,
+    },
+
+    // The tag text on the preview screen
+    tagText: {
+        fontSize: 13,
+        fontWeight: '600',
+    },
+
+    // The species box on the preview screen
+    speciesBox: {
+        backgroundColor: COLOURS.backgroundSecondary,
+        borderRadius: 10,
+        padding: 14,
+        marginHorizontal: 16,
+        marginTop: 12,
+        marginBottom: 4,
+    },
+
+    // The scientific species name
+    speciesName: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: COLOURS.textDark,
+        marginBottom: 2,
+    },
+
+    // The common name below the species name
+    commonName: {
+        fontSize: 14,
+        color: COLOURS.primary,
+        fontWeight: '600',
+        marginBottom: 6,
+    },
+
+    // The description text from Plant.id
+    speciesDescription: {
+        fontSize: 13,
+        color: COLOURS.textGrey,
+        lineHeight: 20,
+    },
+
+    // The caption input
+    captionInput: {
+        backgroundColor: COLOURS.backgroundSecondary,
+        borderWidth: 1,
+        borderColor: COLOURS.textLight,
+        borderRadius: 10,
+        paddingHorizontal: 14,
+        paddingTop: 12,
+        fontSize: 15,
+        color: COLOURS.textDark,
+        textAlignVertical: 'top',
+        marginHorizontal: 16,
+        minHeight: 90,
+    },
+
+    // The character count below the caption input
+    charCount: {
+        textAlign: 'right',
+        fontSize: 12,
+        color: COLOURS.textLight,
+        marginTop: 4,
+        paddingHorizontal: 16,
+    },
+
+    // The main action button
+    button: {
+        backgroundColor: COLOURS.primary,
+        borderRadius: 10,
+        paddingVertical: 15,
+        alignItems: 'center',
+        marginHorizontal: 16,
+        marginTop: 24,
+    },
+
+    // The row inside the button
+    buttonInner: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+    },
+
+    // The text inside the button
+    buttonText: {
+        color: '#FFFFFF',
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
+
+    // The secondary Go Back and Edit button
+    secondaryButton: {
+        backgroundColor: 'transparent',
+        borderWidth: 1,
+        borderColor: COLOURS.primary,
+        borderRadius: 10,
+        paddingVertical: 15,
+        alignItems: 'center',
+        marginHorizontal: 16,
+        marginTop: 12,
+    },
+
+    // The text inside the secondary button
+    secondaryButtonText: {
+        color: COLOURS.primary,
+        fontWeight: '600',
+        fontSize: 16,
+    },
+
+    // The full width image on the preview screen
+    previewImage: {
+        width: '100%',
+        height: 250,
+    },
+
+    // The caption on the preview screen
+    previewCaption: {
+        paddingHorizontal: 16,
+        fontSize: 15,
+        color: COLOURS.textDark,
+        lineHeight: 22,
+        marginBottom: 12,
+    },
+
+    // The No caption added placeholder on the preview screen
+    previewNoCaption: {
+        paddingHorizontal: 16,
+        fontSize: 14,
+        color: COLOURS.textLight,
+        fontStyle: 'italic',
+        marginBottom: 12,
+    },
+
+    // The location row on the preview screen
+    previewLocationRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 16,
+        gap: 6,
+        marginBottom: 8,
+    },
+
+    // The location text on the preview screen
+    previewLocation: {
+        fontSize: 14,
+        color: COLOURS.textGrey,
+    },
+
+    // The heading row on the preview screen
+    previewHeadingRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 16,
+        marginBottom: 16,
+    },
+
+})
