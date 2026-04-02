@@ -400,3 +400,226 @@ export default function Home() {
         </SafeAreaView>
     )
 }
+
+const styles = StyleSheet.create({
+
+    // Main SafeArea container for the entire screen
+    safeArea: {
+        flex: 1,
+        backgroundColor: COLOURS.background,
+    },
+
+    // Top header section of the screen
+    header: {
+        backgroundColor: COLOURS.primary,
+        paddingTop: 50,
+        paddingBottom: 6,
+    },
+
+    // Centered container shown while content is loading
+    loadingContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    // Main feed container spacing
+    feedContent: {
+        paddingHorizontal: 12,
+        paddingTop: 12,
+        paddingBottom: 24,
+    },
+
+    // Vertical spacing between feed cards
+    separator: {
+        height: 12,
+    },
+
+    // Individual feed card container
+    card: {
+        backgroundColor: '#FFFFFF',
+        borderRadius: 14,
+        overflow: 'hidden',
+        borderWidth: 1,
+        borderColor: COLOURS.border,
+    },
+
+    // Header section inside each card
+    // Contains avatar + username
+    cardHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 12,
+        gap: 10,
+    },
+
+    // Circular avatar placeholder/icon background
+    avatarCircle: {
+        backgroundColor: COLOURS.primaryLight,
+        width: 36,
+        height: 36,
+        borderRadius: 999,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    // Username text styling
+    username: {
+        fontSize: 15,
+        fontWeight: '600',
+        color: COLOURS.textDark,
+    },
+
+    // Main tree image displayed in the card
+    treeImage: {
+        width: '100%',
+        height: 220,
+    },
+
+    // Section containing species name/details
+    speciesRow: {
+        padding: 12,
+        paddingBottom: 4,
+    },
+
+    // Tree species title text
+    speciesName: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: COLOURS.textDark,
+        marginBottom: 2,
+    },
+
+    // Additional species information text
+    speciesDetails: {
+        fontSize: 13,
+        color: COLOURS.textGrey,
+    },
+
+    // Caption text under the image/details
+    caption: {
+        paddingHorizontal: 12,
+        paddingTop: 8,
+        fontSize: 14,
+        color: COLOURS.textDark,
+        lineHeight: 20,
+    },
+
+    // Container holding all tags
+    tagsRow: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        padding: 12,
+        gap: 6,
+    },
+
+    // Individual tag pill styling
+    tag: {
+        borderRadius: 999,
+        paddingHorizontal: 10,
+        paddingVertical: 4,
+    },
+
+    // Text inside tag pills
+    tagText: {
+        fontSize: 12,
+        fontWeight: '600',
+    },
+
+    // Row containing location icon + location text
+    locationRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 12,
+        paddingBottom: 10,
+        gap: 4,
+    },
+
+   // Location text styling
+    location: {
+        fontSize: 13,
+        color: COLOURS.textGrey,
+    },
+
+    // Bottom section of the card
+    // Contains actions such as likes/adoption
+    cardFooter: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: 12,
+        borderTopWidth: 1,
+        borderTopColor: COLOURS.border,
+    },
+
+    // Like button container with icon + count
+    likeButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+    },
+
+    // Like count text styling
+    likeCount: {
+        fontSize: 14,
+        fontWeight: '600',
+    },
+
+    // Primary "Adopt" action button
+    adoptButton: {
+        backgroundColor: '#E74C3C',
+        borderRadius: 999,
+        paddingHorizontal: 16,
+        paddingVertical: 7,
+    },
+
+    // Text inside adopt button
+    adoptButtonText: {
+        color: '#FFFFFF',
+        fontWeight: '600',
+        fontSize: 13,
+    },
+
+    // Badge shown when tree has already been adopted
+    adoptedBadge: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: COLOURS.primaryLight,
+        borderRadius: 999,
+        paddingHorizontal: 12,
+        paddingVertical: 6,
+        gap: 4,
+    },
+
+    // Text inside adopted badge
+    adoptedText: {
+        color: COLOURS.primary,
+        fontWeight: '600',
+        fontSize: 13,
+    },
+
+    // Empty state container shown when no feed items exist
+    emptyState: {
+        alignItems: 'center',
+        paddingTop: 80,
+        paddingHorizontal: 32,
+    },
+
+    // Empty state title text
+    emptyTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: COLOURS.textDark,
+        marginTop: 16,
+        marginBottom: 8,
+    },
+
+    // Supporting empty state message text
+    emptyMessage: {
+        fontSize: 14,
+        color: COLOURS.textGrey,
+        textAlign: 'center',
+        lineHeight: 22,
+    },
+
+})
