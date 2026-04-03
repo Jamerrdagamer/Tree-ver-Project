@@ -454,3 +454,334 @@ export default function Guardian({ navigation }) {
         </ScrollView>
     )
 }
+
+
+// Creates a stylesheet for the adoption and updates screens
+const styles = StyleSheet.create({
+
+    // Main screen container
+    container: {
+        flex: 1,
+        backgroundColor: COLOURS.background,
+    },
+
+    // Scrollable screen background
+    scrollView: {
+        backgroundColor: COLOURS.background,
+    },
+
+    // Padding for scrollable content
+    scrollContent: {
+        paddingBottom: 40,
+    },
+
+    // Header section at the top of the screen
+    header: {
+        backgroundColor: COLOURS.primary,
+        paddingTop: 50,
+        paddingBottom: 6,
+        marginBottom: 20,
+    },
+
+    // Full-screen loading state container
+    loadingContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: COLOURS.background,
+    },
+
+    // Main screen title styling
+    screenTitle: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        color: COLOURS.textDark,
+        paddingHorizontal: 16,
+        marginBottom: 10,
+    },
+
+    // Description text below the title
+    description: {
+        fontSize: 14,
+        color: COLOURS.textGrey,
+        paddingHorizontal: 16,
+        lineHeight: 22,
+        marginBottom: 20,
+    },
+
+    // Labels displayed above form fields
+    label: {
+        fontSize: 14,
+        fontWeight: '600',
+        color: COLOURS.textDark,
+        paddingHorizontal: 16,
+        marginTop: 14,
+        marginBottom: 6,
+    },
+
+    // Read-only input container styling
+    autoFilledInput: {
+        backgroundColor: COLOURS.backgroundSecondary,
+        borderRadius: 10,
+        padding: 12,
+        marginHorizontal: 16,
+    },
+
+    // Text inside auto-filled input fields
+    autoFilledText: {
+        color: COLOURS.textGrey,
+        fontSize: 15,
+    },
+
+    // Multi-line text input styling
+    textArea: {
+        backgroundColor: COLOURS.backgroundSecondary,
+        borderWidth: 1,
+        borderColor: COLOURS.textLight,
+        borderRadius: 10,
+        padding: 12,
+        marginHorizontal: 16,
+        minHeight: 100,
+        color: COLOURS.textDark,
+        textAlignVertical: 'top',
+    },
+
+    // Character count text below text area
+    charCount: {
+        textAlign: 'right',
+        paddingHorizontal: 16,
+        marginTop: 4,
+        color: COLOURS.textLight,
+        fontSize: 12,
+    },
+
+    // Row containing tick/check items
+    tickRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginHorizontal: 16,
+        marginTop: 14,
+        gap: 8,
+    },
+
+    // Text displayed beside tick icon
+    tickText: {
+        flex: 1,
+        fontSize: 14,
+        color: COLOURS.textDark,
+    },
+
+    // Main action button styling
+    button: {
+        backgroundColor: COLOURS.primary,
+        borderRadius: 10,
+        paddingVertical: 15,
+        alignItems: 'center',
+        marginHorizontal: 16,
+        marginTop: 24,
+    },
+
+    // Text displayed inside buttons
+    buttonText: {
+        color: '#FFFFFF',
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
+
+    // Error message container
+    errorBox: {
+        backgroundColor: '#FDECEA',
+        borderRadius: 8,
+        padding: 12,
+        marginHorizontal: 16,
+        marginBottom: 16,
+    },
+
+    // Error message text styling
+    errorText: {
+        color: COLOURS.error,
+        textAlign: 'center',
+        fontSize: 14,
+    },
+
+    // Centered content container for empty/loading states
+    centerContent: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingHorizontal: 30,
+    },
+
+    // Heading text styling
+    heading: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: COLOURS.textDark,
+        marginTop: 18,
+        marginBottom: 10,
+        textAlign: 'center',
+    },
+
+    // Supporting message text styling
+    message: {
+        fontSize: 15,
+        color: COLOURS.textGrey,
+        textAlign: 'center',
+        lineHeight: 24,
+    },
+
+    // Padding for list content
+    listContent: {
+        paddingBottom: 30,
+    },
+
+    // Card container styling
+    card: {
+        backgroundColor: '#FFFFFF',
+        borderRadius: 12,
+        padding: 14,
+        marginHorizontal: 16,
+        marginBottom: 12,
+        borderWidth: 1,
+        borderColor: COLOURS.border,
+    },
+
+    // Header section inside cards
+    cardHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+        marginBottom: 10,
+    },
+
+    // Text container inside card header
+    cardHeaderText: {
+        flex: 1,
+    },
+
+    // Species name text styling
+    speciesName: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: COLOURS.textDark,
+    },
+
+    // Additional species details text
+    speciesDetails: {
+        fontSize: 13,
+        color: COLOURS.textGrey,
+        marginTop: 2,
+    },
+
+    // Information row containing icon and text
+    infoRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+        marginTop: 6,
+    },
+
+    // Information text styling
+    infoText: {
+        flex: 1,
+        fontSize: 13,
+        color: COLOURS.textGrey,
+    },
+
+    // Container for card action buttons
+    cardActions: {
+        flexDirection: 'row',
+        gap: 10,
+        marginTop: 14,
+    },
+
+    // Primary update button styling
+    updateButton: {
+        flex: 1,
+        backgroundColor: COLOURS.primary,
+        borderRadius: 8,
+        paddingVertical: 11,
+        alignItems: 'center',
+    },
+
+    // Text inside update button
+    updateButtonText: {
+        color: '#FFFFFF',
+        fontWeight: '600',
+    },
+
+    // Secondary unadopt button styling
+    unadoptButton: {
+        flex: 1,
+        borderWidth: 1,
+        borderColor: COLOURS.error,
+        borderRadius: 8,
+        paddingVertical: 11,
+        alignItems: 'center',
+    },
+
+    // Text inside unadopt button
+    unadoptButtonText: {
+        color: COLOURS.error,
+        fontWeight: '600',
+    },
+
+    // Empty state container
+    emptyBox: {
+        alignItems: 'center',
+        paddingTop: 80,
+    },
+
+    // Empty state text styling
+    emptyText: {
+        marginTop: 12,
+        color: COLOURS.textLight,
+        fontSize: 15,
+    },
+
+    // Update card styles — for the My Updates section under approved trees
+    updateCard: {
+        backgroundColor: '#FFFFFF',
+        borderRadius: 12,
+        marginHorizontal: 16,
+        marginBottom: 12,
+        borderWidth: 1,
+        borderColor: COLOURS.border,
+        overflow: 'hidden',
+        flexDirection: 'row',
+    },
+
+    // Image displayed on update cards
+    updateImage: {
+        width: 100,
+        height: 100,
+    },
+
+    // Main body content inside update cards
+    updateBody: {
+        flex: 1,
+        padding: 12,
+        justifyContent: 'center',
+    },
+
+    // Tree or item name inside update cards
+    updateTreeName: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: COLOURS.textDark,
+        marginBottom: 4,
+    },
+
+    // Caption or update description text
+    updateCaption: {
+        fontSize: 13,
+        color: COLOURS.textGrey,
+        marginBottom: 6,
+    },
+
+    // Date text shown on update cards
+    updateDate: {
+        fontSize: 12,
+        color: COLOURS.textLight,
+    },
+})
