@@ -340,3 +340,304 @@ export default function Profile({ navigation }) {
     )
 }
 
+const styles = StyleSheet.create({
+
+    // Loading container
+    loadingContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: COLOURS.background,
+    },
+
+    // Main container
+    container: {
+        flex: 1,
+        backgroundColor: COLOURS.background,
+    },
+
+    // The thin green strip at the top
+    header: {
+        backgroundColor: COLOURS.primary,
+        paddingTop: 50,
+        paddingBottom: 6,
+    },
+
+    // Scroll view padding
+    scrollContent: {
+        paddingBottom: 40,
+    },
+
+
+    profileRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 16,
+        paddingVertical: 20,
+        gap: 14,
+    },
+
+    // The circular avatar
+    // backgroundColor gives it a light green background
+    // width and height set the size
+    // borderRadius makes it perfectly round
+    avatarContainer: {
+        backgroundColor: COLOURS.primaryLight,
+        width: 74,
+        height: 74,
+        borderRadius: 999,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+
+
+    // The middle section with username and stats
+    // flex 1 takes all remaining space
+    profileMiddle: {
+        flex: 1,
+    },
+
+    // The username text
+    username: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: COLOURS.textDark,
+        marginBottom: 8,
+    },
+
+    // The stats row
+    statsRow: {
+        flexDirection: 'row',
+        gap: 20,
+    },
+
+    // Each stat item
+    statItem: {
+        alignItems: 'flex-start',
+    },
+
+    // The stat number
+    statNumber: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: COLOURS.primary,
+    },
+
+    // The stat label
+    statLabel: {
+        fontSize: 12,
+        color: COLOURS.textGrey,
+    },
+
+
+    logoutButton: {
+        padding: 4,
+    },
+
+
+    divider: {
+        height: 1,
+        backgroundColor: COLOURS.border,
+        marginTop: 4,
+    },
+
+
+    sectionTitle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: COLOURS.textDark,
+        paddingHorizontal: 16,
+        paddingTop: 16,
+        paddingBottom: 12,
+    },
+
+    // Each settings card
+    // backgroundColor gives it a white background
+    // borderRadius rounds the corners
+    // padding adds space inside
+    // marginHorizontal keeps it aligned
+    // marginBottom adds space between cards
+    settingCard: {
+        backgroundColor: '#FFFFFF',
+        borderRadius: 12,
+        padding: 14,
+        marginHorizontal: 16,
+        marginBottom: 10,
+        borderWidth: 1,
+        borderColor: COLOURS.border,
+    },
+
+    // The header row inside each setting card
+    // flexDirection row puts label and edit link side by side
+    // justifyContent space-between pushes them apart
+    // marginBottom adds space below
+    settingHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 6,
+    },
+
+    // The setting label e.g. Username, Email, Password
+    settingLabel: {
+        fontSize: 13,
+        fontWeight: '600',
+        color: COLOURS.textGrey,
+    },
+
+    // The Edit / Cancel / Change link
+    editLink: {
+        fontSize: 14,
+        color: COLOURS.primary,
+        fontWeight: '600',
+    },
+
+    // The current value text
+    settingValue: {
+        fontSize: 15,
+        color: COLOURS.textDark,
+    },
+
+    // The success box shown after a successful save
+    successBox: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: COLOURS.primaryLight,
+        borderRadius: 8,
+        padding: 8,
+        marginBottom: 8,
+        gap: 6,
+    },
+
+    // The success text
+    successText: {
+        fontSize: 13,
+        color: COLOURS.primary,
+        fontWeight: '600',
+    },
+
+    // The field error text
+    fieldError: {
+        fontSize: 12,
+        color: COLOURS.error,
+        marginBottom: 6,
+    },
+
+    // The edit block containing input and save button
+    editBlock: {
+        gap: 8,
+        marginTop: 4,
+    },
+
+    // The text input
+    input: {
+        backgroundColor: COLOURS.backgroundSecondary,
+        borderWidth: 1,
+        borderColor: COLOURS.textLight,
+        borderRadius: 8,
+        paddingHorizontal: 12,
+        paddingVertical: 10,
+        fontSize: 15,
+        color: COLOURS.textDark,
+    },
+
+
+
+    // The save button
+    // backgroundColor uses the primary green
+    saveButton: {
+        backgroundColor: COLOURS.primary,
+        borderRadius: 8,
+        paddingVertical: 11,
+        alignItems: 'center',
+    },
+
+    // The save button text
+    saveButtonText: {
+        color: '#FFFFFF',
+        fontWeight: 'bold',
+        fontSize: 14,
+    },
+
+    // The posts grid padding
+    grid: {
+        paddingHorizontal: 12,
+        paddingBottom: 16,
+    },
+
+    // Each row in the two column grid
+    gridRow: {
+        justifyContent: 'space-between',
+        marginBottom: 12,
+    },
+
+    // Each post card
+    postCard: {
+        width: '48%',
+        backgroundColor: '#FFFFFF',
+        borderRadius: 12,
+        overflow: 'hidden',
+        borderWidth: 1,
+        borderColor: COLOURS.border,
+    },
+
+    // The post image
+    postImage: {
+        width: '100%',
+        height: 130,
+    },
+
+    // The delete button on top of the image
+    deleteButton: {
+        position: 'absolute',
+        top: 8,
+        right: 8,
+        backgroundColor: 'rgba(255,255,255,0.92)',
+        borderRadius: 999,
+        padding: 6,
+    },
+
+    // The info section below the image
+    postInfo: {
+        padding: 8,
+    },
+
+    // The species name
+    postSpecies: {
+        fontSize: 13,
+        fontWeight: '600',
+        color: COLOURS.textDark,
+        marginBottom: 3,
+    },
+
+    // The caption text
+    postCaption: {
+        fontSize: 12,
+        color: COLOURS.textGrey,
+        lineHeight: 17,
+    },
+
+    // The No caption placeholder
+    postNoCaption: {
+        fontSize: 12,
+        color: COLOURS.textLight,
+        fontStyle: 'italic',
+    },
+
+    // The empty state
+    emptyState: {
+        alignItems: 'center',
+        paddingTop: 40,
+        paddingBottom: 40,
+    },
+
+    // The No posts yet text
+    emptyText: {
+        fontSize: 15,
+        color: COLOURS.textLight,
+        marginTop: 12,
+    },
+
+
+})
