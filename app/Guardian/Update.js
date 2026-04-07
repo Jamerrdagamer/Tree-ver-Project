@@ -470,3 +470,323 @@ export default function Update({ route, navigation }) {
             </ScrollView>
         )
 }
+
+
+const styles = StyleSheet.create({
+
+        //Main scroll container for the entire screen
+        scrollView: {
+                backgroundColor: COLOURS.background,
+        },
+
+        // Content container inside the ScrollView
+        // flexGrow ensures content stretches to fill available space
+        scrollContent: {
+                paddingBottom: 40,
+                flexGrow: 1,
+        },
+
+        // Header section at the top of the screen
+        header: {
+                backgroundColor: COLOURS.primary,
+                paddingTop: 50,
+                paddingBottom: 6,
+                marginBottom: 16,
+        },
+
+       // Row containing the screen title and actions/icons
+        titleRow: {
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                paddingHorizontal: 16,
+                marginBottom: 12,
+        },
+
+        // Main screen title text
+        screenTitle: {
+                fontSize: 20,
+                fontWeight: 'bold',
+                color: COLOURS.textDark,
+        },
+
+        // Pill-shaped badge showing tree info/status
+        treeBadge: {
+                flexDirection: 'row',
+                alignItems: 'center',
+                backgroundColor: COLOURS.primaryLight,
+                borderRadius: 999,
+                paddingHorizontal: 14,
+                paddingVertical: 8,
+                marginHorizontal: 16,
+                marginBottom: 16,
+                alignSelf: 'flex-start',
+                gap: 6,
+        },
+
+        // Text inside the tree badge
+        treeBadgeText: {
+                fontSize: 14,
+                color: COLOURS.primary,
+                fontWeight: '600',
+        },
+
+        // Error message container
+        errorBox: {
+                backgroundColor: '#FDECEA',
+                borderRadius: 8,
+                padding: 12,
+                marginHorizontal: 16,
+                marginBottom: 16,
+        },
+
+        // Error message text styling
+        errorText: {
+                color: COLOURS.error,
+                fontSize: 14,
+                textAlign: 'center',
+        },
+
+        // Section title labels e.g. "Photo", "Tags", "Caption"
+        sectionLabel: {
+                fontSize: 15,
+                fontWeight: '600',
+                color: COLOURS.textDark,
+                paddingHorizontal: 16,
+                marginBottom: 6,
+                marginTop: 16,
+        },
+
+        // Small helper text under section labels
+        sectionHint: {
+                fontSize: 12,
+                color: COLOURS.textLight,
+                paddingHorizontal: 16,
+                marginBottom: 10,
+        },
+
+        // Wrapper around selected/uploaded photo
+        photoContainer: {
+                marginHorizontal: 16,
+        },
+
+        // Displayed image preview before upload/post
+        photoPreview: {
+                width: '100%',
+                height: 200,
+                borderRadius: 12,
+                marginBottom: 8,
+        },
+
+        // Button used for changing the photo
+        retakeButton: {
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 6,
+        },
+
+        // Text inside the retake button
+        retakeText: {
+                fontSize: 14,
+                color: COLOURS.primary,
+                fontWeight: '600',
+        },
+
+        // Dashed upload/camera placeholder button
+        cameraButton: {
+                backgroundColor: COLOURS.backgroundSecondary,
+                borderRadius: 12,
+                borderWidth: 2,
+                borderColor: COLOURS.border,
+                borderStyle: 'dashed',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: 160,
+                marginHorizontal: 16,
+                gap: 8,
+        },
+
+        // Text shown inside camera/upload button
+        cameraButtonText: {
+                fontSize: 14,
+                color: COLOURS.textLight,
+        },
+
+        // Row displaying location icon + text
+        locationRow: {
+                flexDirection: 'row',
+                alignItems: 'center',
+                paddingHorizontal: 16,
+                gap: 6,
+        },
+
+        // Location text styling
+        locationText: {
+                fontSize: 14,
+                color: COLOURS.textGrey,
+                flex: 1,
+        },
+
+        // Grid layout for selectable tags/buttons
+        tagsGrid: {
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                paddingHorizontal: 16,
+                gap: 8,
+        },
+
+        // Individual selectable tag button
+        tagButton: {
+                flexDirection: 'row',
+                alignItems: 'center',
+                borderRadius: 999,
+                paddingHorizontal: 14,
+                paddingVertical: 8,
+                gap: 6,
+        },
+
+        // Text inside selectable tag buttons
+        tagButtonText: {
+                fontSize: 13,
+                fontWeight: '600',
+        },
+
+        // Row containing selected tags
+        tagsRow: {
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                paddingHorizontal: 16,
+                gap: 8,
+                marginBottom: 12,
+                marginTop: 12,
+        },
+
+        // Individual displayed tag pill
+        tag: {
+                borderRadius: 999,
+                paddingHorizontal: 12,
+                paddingVertical: 5,
+        },
+
+        // Text inside displayed tags
+        tagText: {
+                fontSize: 13,
+                fontWeight: '600',
+        },
+
+        // Caption/multiline text input field
+        captionInput: {
+                backgroundColor: COLOURS.backgroundSecondary,
+                borderWidth: 1,
+                borderColor: COLOURS.textLight,
+                borderRadius: 10,
+                paddingHorizontal: 14,
+                paddingTop: 12,
+                fontSize: 15,
+                color: COLOURS.textDark,
+                textAlignVertical: 'top',
+                marginHorizontal: 16,
+                minHeight: 90,
+        },
+
+       // Character counter shown below caption input
+        charCount: {
+                textAlign: 'right',
+                fontSize: 12,
+                color: COLOURS.textLight,
+                marginTop: 4,
+                paddingHorizontal: 16,
+        },
+
+        // Primary action button, e.g. submit/post
+        button: {
+                backgroundColor: COLOURS.primary,
+                borderRadius: 10,
+                paddingVertical: 15,
+                alignItems: 'center',
+                marginHorizontal: 16,
+                marginTop: 24,
+        },
+
+        // Inner layout for button icon + text
+        buttonInner: {
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 8,
+        },
+
+        // Text inside primary button
+        buttonText: {
+                color: '#FFFFFF',
+                fontWeight: 'bold',
+                fontSize: 16,
+        },
+
+        // Secondary outlined button style
+        secondaryButton: {
+                backgroundColor: 'transparent',
+                borderWidth: 1,
+                borderColor: COLOURS.primary,
+                borderRadius: 10,
+                paddingVertical: 15,
+                alignItems: 'center',
+                marginHorizontal: 16,
+                marginTop: 12,
+        },
+
+        // Text inside secondary button
+        secondaryButtonText: {
+                color: COLOURS.primary,
+                fontWeight: '600',
+                fontSize: 16,
+        },
+
+        // Large preview image shown in preview mode
+        previewImage: {
+                width: '100%',
+                height: 250,
+        },
+
+        // Caption text displayed in preview mode
+        previewCaption: {
+                paddingHorizontal: 16,
+                fontSize: 15,
+                color: COLOURS.textDark,
+                lineHeight: 22,
+                marginBottom: 12,
+        },
+
+        // Placeholder text shown when no caption exists
+        previewNoCaption: {
+                paddingHorizontal: 16,
+                fontSize: 14,
+                color: COLOURS.textLight,
+                fontStyle: 'italic',
+                marginBottom: 12,
+        },
+
+        // Location row shown in preview mode
+        previewLocationRow: {
+                flexDirection: 'row',
+                alignItems: 'center',
+                paddingHorizontal: 16,
+                gap: 6,
+                marginBottom: 8,
+        },
+
+        // Location text in preview mode
+        previewLocation: {
+                fontSize: 14,
+                color: COLOURS.textGrey,
+        },
+
+        // Header row for preview section
+        previewHeadingRow: {
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                paddingHorizontal: 16,
+                marginBottom: 16,
+        },
+
+})
