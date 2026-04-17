@@ -284,3 +284,254 @@ export default function Applications() {
         </View>
     )
 }
+
+
+// Defines all styles used throughout the admin approval screen
+const styles = StyleSheet.create({
+
+    // Full-screen centered loading state container
+    loadingContainer: {
+        flex: 1, // Takes up full screen
+        alignItems: 'center', // Centers content horizontally
+        justifyContent: 'center', // Centers content vertically
+        backgroundColor: ADMIN.backgroundSecondary, // Secondary backgorund colour
+    },
+
+    // Main screen wrapper
+    container: {
+        flex: 1, // Takes up full avaliable space
+        backgroundColor: ADMIN.backgroundSecondary, // Screen background colour
+    },
+
+    // Top header section styling
+    header: {
+        backgroundColor: ADMIN.primary, // Primary brand colour
+        paddingTop: 56, // Space from top safe area
+        paddingBottom: 20, // Bottom spacing
+        paddingHorizontal: 16, // Horizontal padding
+    },
+
+    // Row layout inside header
+    headerRow: {
+        flexDirection: 'row', // Places items side by side
+        alignItems: 'center', // Vertically aligns items
+        gap: 10, // Space between row items
+        marginBottom: 4, // Spacing below row
+    },
+
+    // Main title text in header
+    headerTitle: {
+        fontSize: 22, // Large title size
+        fontWeight: 'bold', // Bold font styling
+        color: '#FFFFFF', // White text
+    },
+
+    // Badge showing pending count/status
+    pendingBadge: {
+        backgroundColor: ADMIN.warning, // Warning highlight colour
+        borderRadius: 999, // Fully rounded badge
+        paddingHorizontal: 8, // Horizontal spacing
+        paddingVertical: 2, // Vertical spacing
+    },
+
+    // Text inside pending badge
+    pendingBadgeText: {
+        color: '#FFFFFF', // White text
+        fontWeight: 'bold', // bold text
+        fontSize: 13, // Small badge text
+    },
+
+
+    headerSubtitle: {
+        fontSize: 13,
+        color: 'rgba(255,255,255,0.7)', // Semi-transparent white
+    },
+
+    // FlatList content container spacing
+    listContent: {
+        paddingHorizontal: 16,
+        paddingTop: 16,
+        paddingBottom: 24,
+    },
+
+    // Spacer between cards/items
+    separator: {
+        height: 12,
+    },
+
+    // Approval request card container spacing
+    card: {
+        backgroundColor: '#FFFFFF',
+        borderRadius: 14, // Rounded card corners
+        padding: 16, // Inner spacing
+        elevation: 2, //Android shadow
+        shadowColor: '#000000', // iOS shadow colour
+        shadowOffset: { width: 0, height: 1 }, // Shadow direction
+        shadowOpacity: 0.08, // Shadow transparency
+        shadowRadius: 4, // Shadow blur
+    },
+
+    // Top section of the card
+    cardHeader: {
+        flexDirection: 'row', // Horizontal layout
+        justifyContent: 'space-between', // Space between left/right content
+        alignItems: 'flex-start', // Align items to top
+        marginBottom: 12, // Bottom spacing
+    },
+
+    cardHeaderLeft: {
+        flex: 1, // Takes remaining width
+        marginRight: 12, // Space before status badge
+    },
+
+    // User display text
+    username: {
+        fontSize: 16, // Medium text size
+        fontWeight: 'bold', // Bold username
+        color: ADMIN.textDark, // Dark text colour
+        marginBottom: 2, // Small spacing below
+    },
+
+    // E-mail display text
+    email: {
+        fontSize: 13,
+        color: ADMIN.textGrey, // Grey text
+    },
+
+    // Status badge container
+    statusBadge: {
+        borderRadius: 999, // Pill shape
+        paddingHorizontal: 10,
+        paddingVertical: 4,
+    },
+
+    //  Status badge text
+    statusText: {
+        fontSize: 12,
+        fontWeight: '600',
+    },
+
+    // Box containing approval/rejection reason
+    reasonBox: {
+        backgroundColor: ADMIN.backgroundSecondary, // Light secondary background
+        borderRadius: 8, // Rounded corners
+        padding: 12,
+        marginBottom: 12,
+    },
+
+    // Label above reason text
+    reasonLabel: {
+        fontSize: 12,
+        fontWeight: '600', // Semi-bold
+        color: ADMIN.textGrey,
+        marginBottom: 4, // Spacing below label
+    },
+
+    // Main reason/description text
+    reasonText: {
+        fontSize: 14,
+        color: ADMIN.textDark, // Dark readable text
+        lineHeight: 20, // Improves readability
+    },
+
+    // Wrapper for confirmation indicators
+    confirmationsRow: {
+        gap: 6, // Space between confirmation items
+        marginBottom: 10,
+    },
+
+    // Individual confirmation row
+    confirmationItem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6, // Space between icon and text
+    },
+
+    confirmationText: {
+        fontSize: 13,
+        color: ADMIN.textGrey, // Grey colour
+    },
+
+    // Row displaying request date/time
+    dateRow: {
+        flexDirection: 'row', // Horizontal layout
+        alignItems: 'center', // Align icon/text
+        gap: 6,
+        marginBottom: 14,
+    },
+
+    // Date display text
+    dateText: {
+        fontSize: 13,
+        color: ADMIN.textLight, // Light grey text
+    },
+
+    // Row containing action buttons
+    actionRow: {
+        flexDirection: 'row', // Horizontal buttons
+        gap: 10,
+    },
+
+    // Approve action button
+    approveButton: {
+        flex: 1, // Equal button width
+        flexDirection: 'row', // Horizontal icon/text
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: ADMIN.success, // Success green colour
+        borderRadius: 8, //Rounded corners
+        paddingVertical: 10, // Vertical button padding
+        gap: 6,
+    },
+
+    approveButtonText: {
+        color: '#FFFFFF', // White text
+        fontWeight: '600', // Semi-bold
+        fontSize: 14,
+    },
+
+    rejectButton: {
+        flex: 1,
+        flexDirection: 'row', // Equal width
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'transparent', // Transparent background
+        borderWidth: 1,
+        borderColor: ADMIN.error, // Error colour border
+        borderRadius: 8,
+        paddingVertical: 10,
+        gap: 6,
+    },
+
+    rejectButtonText: {
+        color: ADMIN.error, // Error red text
+        fontWeight: '600', // Semi-bold
+        fontSize: 14, // Medium text size
+    },
+
+    // Empty state wrapper
+    emptyState: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 80,
+        paddingHorizontal: 32,
+    },
+
+    // Empty state title text
+    emptyTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: ADMIN.textDark,
+        marginTop: 16, // Space above title
+        marginBottom: 8, // Space below title
+    },
+
+    // Empty state descriptive message
+    emptyMessage: {
+        fontSize: 14,
+        color: ADMIN.textGrey,
+        textAlign: 'center', //Center aligned text
+        lineHeight: 22, // Improved readability
+    },
+
+})
