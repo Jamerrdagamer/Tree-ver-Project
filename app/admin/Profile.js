@@ -132,228 +132,121 @@ export default function Profile({ navigation }) {
     )
 }
 
-// Styles for admin content management
+// Creates a stylesheet for the admin screen
 const styles = StyleSheet.create({
 
-    // Full-screen loading state container
+    // Full-screen loading container
     loadingContainer: {
-        flex: 1, //
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: ADMIN.backgroundSecondary, // Secondary background colour
-    },
-
-    // Main screen wrapper
-    container: {
         flex: 1,
-        backgroundColor: ADMIN.backgroundSecondary, // Main background colour
+        alignItems: 'center', // Centers content horizontally
+        justifyContent: 'center', // Centers content vertically
+        backgroundColor: ADMIN.backgroundSecondary,
     },
 
-    // Main section at the top of the screen
-    header:
-        { backgroundColor: ADMIN.primary, // Primary theme colour
-        paddingTop: 56, // Safe for status bar/safe area
-            paddingBottom: 20,
-            paddingHorizontal: 16,
-        },
+    // Main scrollable screen background
+    scrollView: {
+        backgroundColor: ADMIN.backgroundSecondary,
+    },
 
+    // Padding for scrollable content
+    scrollContent: {
+        paddingBottom: 40,
+    },
+
+    // Top header section styling
+    header: {
+        backgroundColor: ADMIN.primary,
+        paddingTop: 56,
+        paddingBottom: 20,
+        paddingHorizontal: 16,
+    },
+
+    // Main title inside the header
     headerTitle: {
         fontSize: 22,
         fontWeight: 'bold',
-        color: '#FFFFFF', // White text
+        color: '#FFFFFF',
         marginBottom: 4,
     },
 
+    // Subtitle text below the header title
     headerSubtitle: {
         fontSize: 13,
-        color: 'rgba(255,255,255,0.7)', // Semi-transparent white
+        color: 'rgba(255,255,255,0.7)',
     },
 
-    toggleContainer: {
-        flexDirection: 'row',
-        backgroundColor: '#FFFFFF', // White background
+    // Card displaying admin profile information
+    adminBadgeRow: {
+        flexDirection: 'row', // Horizontal layout
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
         marginHorizontal: 16,
         marginTop: 16,
-        marginBottom: 8,
-        borderRadius: 12, // Rounded container corners
-        padding: 6, // Inner spacing
-        gap: 6,
-        elevation: 2,// Android shadow
-        shadowColor: '#000000', // iOS shadow colour
-        shadowOffset: { width: 0, height: 1 }, // Shadow direction
-        shadowOpacity: 0.08,  // Shadow transparency
-        shadowRadius: 4, // Shadow blur
-    },
-
-    // Individual toogle buttons
-    toggleButton: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center', // Vertical alignment
-        justifyContent: 'center', // Horizontal alignment
-        borderRadius: 8,
-        paddingVertical: 10, // Vertical button spacing
-        gap: 6,
-    },
-
-    // Active toggle button
-    toggleButtonActive: {
-        backgroundColor: ADMIN.primary, // Highlight active tab
-    },
-
-    // Inactive toggle button
-    toggleButtonInactive: {
-        backgroundColor: 'transparent', // Transparent background
-    },
-
-    // Base text styling for toggle buttons
-    toggleButtonText: {
-        fontWeight: '600', // Semi-bold text
-        fontSize: 14,
-    },
-
-    // Text colour for active toggle state
-    toggleButtonTextActive: {
-        color: '#FFFFFF', // White text
-    },
-
-    // Text colour for inactive toggle state
-    toggleButtonTextInactive: {
-        color: ADMIN.primary, // Primary theme colour
-    },
-
-    // FlatList content spacing
-    listContent: {
-        paddingHorizontal: 16,
-        paddingTop: 8,
-        paddingBottom: 24,
-    },
-
-    // Space between list items/cards
-    separator: {
-        height: 12
-    },
-
-    // Main content card container
-    card: {
-        backgroundColor: '#FFFFFF',
         borderRadius: 14,
-        overflow: 'hidden',  // Prevent children overflow
-        elevation: 2, //Android shadow
-        shadowColor: '#000000', // iOS shadow colour
-        shadowOffset: { width: 0, height: 1 }, // Shadow direction
-        shadowOpacity: 0.08, // Shadow transparency
-        shadowRadius: 4, // Shadow blur
+        padding: 16,
+        gap: 14,
+        elevation: 2,  // Android shadow
+        shadowColor: '#000000', // iOS shadow
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.08,
+        shadowRadius: 4,
     },
 
-    // Image displayed at the top of the card
-    cardImage: { width: '100%', // Full card width
-        height: 180, // Fixed image height
-    },
-
-    // Floating delete button image/card
-    deleteButton: {
-        position: 'absolute', // Overlay positioning
-        top: 10, // Distance from top
-        right: 10, // Distance from right
-        backgroundColor: 'rgba(231, 76, 60, 0.85)', // Semi-transparent red
-        borderRadius: 8, // Rounded corners
-        padding: 8, // Inner spacing
-    },
-
-    // Inner card content wrapper
-    cardContent: {
-        padding: 14 }, // Content spacing
-
-    guardianBadge: {
-        flexDirection: 'row', alignItems: 'center', backgroundColor: ADMIN.primaryLight,
-        borderRadius: 999, paddingHorizontal: 10, paddingVertical: 4, alignSelf: 'flex-start',
-        gap: 4, marginBottom: 10,
-    },
-
-    // Text inside guardian badge
-    guardianBadgeText: { fontSize: 12,
-        color: ADMIN.primary, //Primary theme colour
-        fontWeight: '600', // Semi-bold text
-    },
-
-    // Row displaying metadata/info
-    infoRow: {
-        flexDirection: 'row',
+    // Circular background for admin icon/avatar
+    adminIconCircle: {
+        backgroundColor: ADMIN.primaryLight,
+        width: 60,
+        height: 60,
+        borderRadius: 999,
         alignItems: 'center',
-        flexWrap: 'wrap',
-        gap: 6,
-        marginBottom: 8,
+        justifyContent: 'center',
     },
 
-    // Metadata/info text styling
-    infoText: {
-        fontSize: 13,
-        color: ADMIN.textGrey, // Grey text colour
-    },
-
-    // Main caption/ body text
-    caption: {
-        fontSize: 14,
-        color: ADMIN.textDark,
-        lineHeight: 20, // Better readability
-        marginBottom: 10, // Bottom spacing
-    },
-
-    // Wrapper for tags/chips
-    tagsRow: {
-        flexDirection: 'row',// Horizontal layout
-        flexWrap: 'wrap', // Allow multiple rows
-        gap: 6, // Space between tags
-        marginBottom: 10,
-    },
-
-    // Individual tag/chip container
-    tag: {
-        borderRadius: 999, // Pill shape
-        paddingHorizontal: 10,
-        paddingVertical: 4,
-    },
-
-    // Text inside tag/chip
-    tagText: {
-        fontSize: 12,
-        fontWeight: '600', // Semi-bold text
-    },
-
-    // Footer metadata row
-    footerRow: {
-        flexDirection: 'row', // Horizontal layout
-        flexWrap: 'wrap', // Wrap if needed
-        gap: 12,// Space between footer items
-    },
-
-    // Individual footer item container
-    footerItem: {
-        flexDirection: 'row', // Places icon and text side-by-side
-        alignItems: 'center', // Vertically aligns icon and text
-        gap: 4, // Space between icon and text
-    },
-
-    //Footer text styling
-    footerText: {
-        fontSize: 12,
-        color: ADMIN.textLight,
-    },
-
-    // Empty state container shown when no data/content exists
-    emptyState: {
-        alignItems: 'center',
-        paddingTop: 80,
-        paddingHorizontal: 32,
-    },
-
-    // Title text displayed in the empty state
-    emptyTitle: {
-        fontSize: 20,
+    // Admin name text styling
+    adminName: {
+        fontSize: 18,
         fontWeight: 'bold',
         color: ADMIN.textDark,
-        marginTop: 16,
+        marginBottom: 2,
+    },
+
+    // Admin email text styling
+    adminEmail: {
+        fontSize: 13,
+        color: ADMIN.textGrey,
+        marginBottom: 3,
+    },
+
+    // Admin role badge/text styling
+    adminRole: {
+        fontSize: 13,
+        color: ADMIN.primary,
+        fontWeight: '600',
+    },
+
+    // Small logout icon button
+    logoutButton: {
+        padding: 4,
+    },
+
+    // Large logout button container
+    bigLogoutButton: {
+        flexDirection: 'row',  // Icon and text side-by-side
+        alignItems: 'centre',
+        justifyContent: 'centre',
+        backgroundColor: ADMIN.error,
+        marginHorizontal: 16,
+        marginTop: 20,
+        borderRadius: 10,
+        paddingVertical: 14,
+        gap: 8,
+    },
+
+    // Text displayed inside the logout button
+    bigLogoutText: {
+        color: '#FFFFFF',
+        fontSize: 15,
+        fontWeight: 'bold',
     },
 
 })
