@@ -322,228 +322,344 @@ export default function Trees() {
     )
 }
 
-// Styles for admin content management
 const styles = StyleSheet.create({
 
-    // Full-screen loading state container
     loadingContainer: {
-        flex: 1, //
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: ADMIN.backgroundSecondary, // Secondary background colour
+        backgroundColor: ADMIN.backgroundSecondary,
     },
 
-    // Main screen wrapper
+    // Main container
     container: {
         flex: 1,
-        backgroundColor: ADMIN.backgroundSecondary, // Main background colour
+        backgroundColor: ADMIN.backgroundSecondary,
     },
 
-    // Main section at the top of the screen
-    header:
-        { backgroundColor: ADMIN.primary, // Primary theme colour
-        paddingTop: 56, // Safe for status bar/safe area
-            paddingBottom: 20,
-            paddingHorizontal: 16,
-        },
+    // Navy header
+    // paddingTop clears the phone notch
+    // paddingBottom controls the header height
+    // paddingHorizontal adds space on the sides
+    header: {
+        backgroundColor: ADMIN.primary,
+        paddingTop: 56,
+        paddingBottom: 20,
+        paddingHorizontal: 16,
+    },
+
+    // Header row with title and count badge
+    // flexDirection row puts them side by side
+    // alignItems center vertically centres them
+    // gap adds space between them
+    // marginBottom adds space below before the subtitle
+    headerRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+        marginBottom: 4,
+    },
 
     headerTitle: {
         fontSize: 22,
         fontWeight: 'bold',
-        color: '#FFFFFF', // White text
-        marginBottom: 4,
+        color: '#FFFFFF',
+    },
+
+    // The tree count badge
+    // backgroundColor uses a semi-transparent white
+    // borderRadius makes it pill shaped
+    countBadge: {
+        backgroundColor: 'rgba(255,255,255,0.25)',
+        borderRadius: 999,
+        paddingHorizontal: 10,
+        paddingVertical: 2,
+    },
+
+    countBadgeText: {
+        color: '#FFFFFF',
+        fontWeight: 'bold',
+        fontSize: 13,
     },
 
     headerSubtitle: {
         fontSize: 13,
-        color: 'rgba(255,255,255,0.7)', // Semi-transparent white
+        color: 'rgba(255,255,255,0.7)',
     },
 
-    toggleContainer: {
-        flexDirection: 'row',
-        backgroundColor: '#FFFFFF', // White background
-        marginHorizontal: 16,
-        marginTop: 16,
-        marginBottom: 8,
-        borderRadius: 12, // Rounded container corners
-        padding: 6, // Inner spacing
-        gap: 6,
-        elevation: 2,// Android shadow
-        shadowColor: '#000000', // iOS shadow colour
-        shadowOffset: { width: 0, height: 1 }, // Shadow direction
-        shadowOpacity: 0.08,  // Shadow transparency
-        shadowRadius: 4, // Shadow blur
-    },
-
-    // Individual toogle buttons
-    toggleButton: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center', // Vertical alignment
-        justifyContent: 'center', // Horizontal alignment
-        borderRadius: 8,
-        paddingVertical: 10, // Vertical button spacing
-        gap: 6,
-    },
-
-    // Active toggle button
-    toggleButtonActive: {
-        backgroundColor: ADMIN.primary, // Highlight active tab
-    },
-
-    // Inactive toggle button
-    toggleButtonInactive: {
-        backgroundColor: 'transparent', // Transparent background
-    },
-
-    // Base text styling for toggle buttons
-    toggleButtonText: {
-        fontWeight: '600', // Semi-bold text
-        fontSize: 14,
-    },
-
-    // Text colour for active toggle state
-    toggleButtonTextActive: {
-        color: '#FFFFFF', // White text
-    },
-
-    // Text colour for inactive toggle state
-    toggleButtonTextInactive: {
-        color: ADMIN.primary, // Primary theme colour
-    },
-
-    // FlatList content spacing
     listContent: {
         paddingHorizontal: 16,
-        paddingTop: 8,
+        paddingTop: 16,
         paddingBottom: 24,
     },
 
-    // Space between list items/cards
     separator: {
-        height: 12
+        height: 12,
     },
 
-    // Main content card container
+    // Each tree card
+    // backgroundColor gives it a white background
+    // borderRadius rounds the corners
+    // padding adds space inside
+    // elevation and shadow add a subtle drop shadow
     card: {
         backgroundColor: '#FFFFFF',
         borderRadius: 14,
-        overflow: 'hidden',  // Prevent children overflow
-        elevation: 2, //Android shadow
-        shadowColor: '#000000', // iOS shadow colour
-        shadowOffset: { width: 0, height: 1 }, // Shadow direction
-        shadowOpacity: 0.08, // Shadow transparency
-        shadowRadius: 4, // Shadow blur
+        padding: 14,
+        elevation: 2,
+        shadowColor: '#000000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.08,
+        shadowRadius: 4,
     },
 
-    // Image displayed at the top of the card
-    cardImage: { width: '100%', // Full card width
-        height: 180, // Fixed image height
+    // Card header row
+    // flexDirection row puts photo, text, and delete button side by side
+    // alignItems center vertically centres them
+    // marginBottom adds space below before the info rows
+    // gap adds space between each element
+    cardHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 10,
+        gap: 12,
     },
 
-    // Floating delete button image/card
+    // The tree thumbnail photo
+    // width and height set the size
+    // borderRadius rounds the corners
+    treeThumb: {
+        width: 52,
+        height: 52,
+        borderRadius: 10,
+    },
+
+    // The placeholder shown when no photo is available
+    // backgroundColor uses the light blue tint
+    // width and height match the thumbnail
+    // borderRadius rounds the corners
+    // alignItems and justifyContent centre the icon
+    treeThumbPlaceholder: {
+        width: 52,
+        height: 52,
+        borderRadius: 10,
+        backgroundColor: ADMIN.primaryLight,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    // The text block next to the photo
+    // flex 1 takes all remaining space
+    cardHeaderText: {
+        flex: 1,
+    },
+
+    // The species name
+    // fontWeight bold makes it stand out
+    speciesName: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        color: ADMIN.textDark,
+        marginBottom: 2,
+    },
+
+    // The common name below the species name
+    // color uses textGrey for a softer look
+    commonName: {
+        fontSize: 13,
+        color: ADMIN.textGrey,
+    },
+
+    // The delete button
+    // padding makes it easy to tap
     deleteButton: {
-        position: 'absolute', // Overlay positioning
-        top: 10, // Distance from top
-        right: 10, // Distance from right
-        backgroundColor: 'rgba(231, 76, 60, 0.85)', // Semi-transparent red
-        borderRadius: 8, // Rounded corners
-        padding: 8, // Inner spacing
+        padding: 4,
     },
 
-    // Inner card content wrapper
-    cardContent: {
-        padding: 14 }, // Content spacing
-
-    guardianBadge: {
-        flexDirection: 'row', alignItems: 'center', backgroundColor: ADMIN.primaryLight,
-        borderRadius: 999, paddingHorizontal: 10, paddingVertical: 4, alignSelf: 'flex-start',
-        gap: 4, marginBottom: 10,
-    },
-
-    // Text inside guardian badge
-    guardianBadgeText: { fontSize: 12,
-        color: ADMIN.primary, //Primary theme colour
-        fontWeight: '600', // Semi-bold text
-    },
-
-    // Row displaying metadata/info
+    // Each info row showing address or adoption status
+    // flexDirection row puts icon and text side by side
+    // alignItems center vertically centres them
+    // marginBottom adds space between rows
+    // gap adds space between icon and text
     infoRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        flexWrap: 'wrap',
+        marginBottom: 6,
         gap: 6,
-        marginBottom: 8,
     },
 
-    // Metadata/info text styling
+    // The info text
+    // color uses textGrey for a softer secondary look
     infoText: {
         fontSize: 13,
-        color: ADMIN.textGrey, // Grey text colour
+        color: ADMIN.textGrey,
+        flex: 1,
     },
 
-    // Main caption/ body text
-    caption: {
-        fontSize: 14,
-        color: ADMIN.textDark,
-        lineHeight: 20, // Better readability
-        marginBottom: 10, // Bottom spacing
+    // The QR code button
+    // flexDirection row puts icon and text side by side
+    // alignItems center vertically centres them
+    // backgroundColor uses the light blue tint
+    // borderRadius makes it pill shaped
+    // paddingHorizontal and paddingVertical add space inside
+    // alignSelf flex-start stops it stretching full width
+    // gap adds space between icon and text
+    // marginTop adds space above
+    qrButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: ADMIN.primaryLight,
+        borderRadius: 999,
+        paddingHorizontal: 14,
+        paddingVertical: 8,
+        alignSelf: 'flex-start',
+        gap: 6,
+        marginTop: 6,
     },
 
-    // Wrapper for tags/chips
-    tagsRow: {
-        flexDirection: 'row',// Horizontal layout
-        flexWrap: 'wrap', // Allow multiple rows
-        gap: 6, // Space between tags
-        marginBottom: 10,
+    // The QR button text
+    qrButtonText: {
+        fontSize: 13,
+        color: ADMIN.primary,
+        fontWeight: '600',
     },
 
-    // Individual tag/chip container
-    tag: {
-        borderRadius: 999, // Pill shape
-        paddingHorizontal: 10,
-        paddingVertical: 4,
-    },
-
-    // Text inside tag/chip
-    tagText: {
-        fontSize: 12,
-        fontWeight: '600', // Semi-bold text
-    },
-
-    // Footer metadata row
-    footerRow: {
-        flexDirection: 'row', // Horizontal layout
-        flexWrap: 'wrap', // Wrap if needed
-        gap: 12,// Space between footer items
-    },
-
-    // Individual footer item container
-    footerItem: {
-        flexDirection: 'row', // Places icon and text side-by-side
-        alignItems: 'center', // Vertically aligns icon and text
-        gap: 4, // Space between icon and text
-    },
-
-    //Footer text styling
-    footerText: {
-        fontSize: 12,
-        color: ADMIN.textLight,
-    },
-
-    // Empty state container shown when no data/content exists
+    // Empty state
     emptyState: {
         alignItems: 'center',
+        justifyContent: 'center',
         paddingTop: 80,
         paddingHorizontal: 32,
     },
 
-    // Title text displayed in the empty state
     emptyTitle: {
         fontSize: 20,
         fontWeight: 'bold',
         color: ADMIN.textDark,
         marginTop: 16,
+        marginBottom: 8,
+    },
+
+    emptyMessage: {
+        fontSize: 14,
+        color: ADMIN.textGrey,
+        textAlign: 'center',
+        lineHeight: 22,
+    },
+
+    // The modal overlay
+    // flex 1 fills the entire screen
+    // backgroundColor is semi-transparent black
+    // justifyContent flex-end pins the modal to the bottom
+    modalOverlay: {
+        flex: 1,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        justifyContent: 'flex-end',
+    },
+
+    // The white modal box
+    // borderTopLeftRadius and borderTopRightRadius round the top corners
+    // padding adds space inside
+    // paddingBottom adds extra space for the home bar
+    // alignItems center centres all content horizontally
+    modalBox: {
+        backgroundColor: '#FFFFFF',
+        borderTopLeftRadius: 24,
+        borderTopRightRadius: 24,
+        padding: 24,
+        paddingBottom: 44,
+        alignItems: 'center',
+    },
+
+    // The modal header row
+    // flexDirection row puts title and close button side by side
+    // justifyContent space-between pushes them apart
+    // alignItems center vertically centres them
+    // width 100% makes it fill the full modal width
+    // marginBottom adds space below before the species name
+    modalHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%',
+        marginBottom: 16,
+    },
+
+    modalTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: ADMIN.textDark,
+    },
+
+    // The species name in the modal
+    // textAlign center centres it
+    // fontWeight bold makes it stand out
+    modalSpecies: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: ADMIN.textDark,
+        textAlign: 'center',
+        marginBottom: 2,
+    },
+
+    // The common name in the modal
+    // textAlign center centres it
+    // color uses primary navy
+    // marginBottom adds space below before the QR code
+    modalCommonName: {
+        fontSize: 14,
+        color: ADMIN.primary,
+        fontWeight: '600',
+        textAlign: 'center',
+        marginBottom: 24,
+    },
+
+    // The QR code container
+    // padding adds space around the QR code
+    // backgroundColor gives it a white background
+    // borderRadius rounds the corners
+    // elevation and shadow add a subtle drop shadow
+    // marginBottom adds space below before the info text
+    qrContainer: {
+        padding: 16,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 16,
+        elevation: 4,
+        shadowColor: '#000000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 6,
+        marginBottom: 20,
+    },
+
+    // The info text below the QR code
+    // textAlign center centres it
+    // color uses textGrey for a softer look
+    // marginBottom adds space below before the close button
+    qrInfoText: {
+        fontSize: 13,
+        color: ADMIN.textGrey,
+        textAlign: 'center',
+        marginBottom: 24,
+    },
+
+    // The close button at the bottom of the modal
+    // backgroundColor uses the navy blue
+    // paddingVertical controls the height
+    // width 100% makes it fill the full modal width
+    // alignItems center centres the text
+    closeButton: {
+        backgroundColor: ADMIN.primary,
+        borderRadius: 12,
+        paddingVertical: 14,
+        width: '100%',
+        alignItems: 'center',
+    },
+
+    closeButtonText: {
+        color: '#FFFFFF',
+        fontWeight: 'bold',
+        fontSize: 16,
     },
 
 })
