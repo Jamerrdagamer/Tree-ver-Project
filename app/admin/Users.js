@@ -292,3 +292,236 @@ export default function Users() {
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+
+    loadingContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: ADMIN.backgroundSecondary,
+    },
+
+    // Main container
+    container: {
+        flex: 1,
+        backgroundColor: ADMIN.backgroundSecondary,
+    },
+
+    // Navy header
+    // paddingTop clears the phone notch
+    // paddingBottom controls the header height
+    // paddingHorizontal adds space on the sides
+    header: {
+        backgroundColor: ADMIN.primary,
+        paddingTop: 56,
+        paddingBottom: 20,
+        paddingHorizontal: 16,
+    },
+
+    headerTitle: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        color: '#FFFFFF',
+        marginBottom: 4,
+    },
+
+    headerSubtitle: {
+        fontSize: 13,
+        color: 'rgba(255,255,255,0.7)',
+    },
+
+    // Search bar container
+    // flexDirection row puts icon, input, and clear button side by side
+    // alignItems center vertically centres them
+    // backgroundColor gives it a white background
+    // borderRadius rounds the corners
+    // paddingHorizontal adds space inside on the sides
+    // paddingVertical controls the height
+    // gap adds space between items
+    // elevation and shadow add a subtle drop shadow
+    searchContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        marginHorizontal: 16,
+        marginTop: 16,
+        marginBottom: 8,
+        borderRadius: 12,
+        paddingHorizontal: 14,
+        paddingVertical: 10,
+        gap: 8,
+        elevation: 2,
+        shadowColor: '#000000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.08,
+        shadowRadius: 4,
+    },
+
+    // The search input
+    // flex 1 makes it take all remaining space
+    searchInput: {
+        flex: 1,
+        fontSize: 15,
+        color: ADMIN.textDark,
+    },
+
+    listContent: {
+        paddingHorizontal: 16,
+        paddingTop: 8,
+        paddingBottom: 24,
+    },
+
+    separator: {
+        height: 10,
+    },
+
+    // Each user card
+    // backgroundColor gives it a white background
+    // borderRadius rounds the corners
+    // padding adds space inside
+    // elevation and shadow add a subtle drop shadow
+    card: {
+        backgroundColor: '#FFFFFF',
+        borderRadius: 14,
+        padding: 14,
+        elevation: 2,
+        shadowColor: '#000000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.08,
+        shadowRadius: 4,
+    },
+
+    // Card header row
+    // flexDirection row puts left and right side by side
+    // justifyContent space-between pushes them apart
+    // alignItems center vertically centres them
+    // marginBottom adds space below before the info grid
+    cardHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 12,
+    },
+
+    // Left side — avatar and username/email
+    // flexDirection row puts them side by side
+    // alignItems center vertically centres them
+    // flex 1 takes all remaining space
+    // gap adds space between avatar and text
+    cardHeaderLeft: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+        flex: 1,
+        marginRight: 12,
+    },
+
+    // Right side — status badge and delete button
+    // flexDirection row puts them side by side
+    // alignItems center vertically centres them
+    // gap adds space between them
+    cardHeaderRight: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+    },
+
+    // The circular avatar
+    // backgroundColor uses the light blue tint
+    // width and height set the size
+    // borderRadius makes it perfectly round
+    avatarCircle: {
+        backgroundColor: ADMIN.primaryLight,
+        width: 40,
+        height: 40,
+        borderRadius: 999,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    username: {
+        fontSize: 15,
+        fontWeight: '600',
+        color: ADMIN.textDark,
+        marginBottom: 2,
+    },
+
+    email: {
+        fontSize: 12,
+        color: ADMIN.textGrey,
+    },
+
+    // Status badge
+    // borderRadius makes it pill shaped
+    statusBadge: {
+        borderRadius: 999,
+        paddingHorizontal: 10,
+        paddingVertical: 4,
+    },
+
+    statusText: {
+        fontSize: 12,
+        fontWeight: '600',
+    },
+
+    // Delete button
+    // padding makes it easy to tap
+    deleteButton: {
+        padding: 4,
+    },
+
+    // Info grid
+    // flexDirection row puts items side by side
+    // flexWrap wrap allows them to wrap to new lines
+    // gap adds space between items
+    infoGrid: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: 8,
+    },
+
+    // Each info item
+    // flexDirection row puts icon and text side by side
+    // alignItems center vertically centres them
+    // backgroundColor gives it a light background
+    // borderRadius makes it pill shaped
+    // paddingHorizontal and paddingVertical add space inside
+    // gap adds space between icon and text
+    infoItem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: ADMIN.backgroundSecondary,
+        borderRadius: 999,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        gap: 5,
+    },
+
+    infoText: {
+        fontSize: 12,
+        color: ADMIN.textGrey,
+    },
+
+    emptyState: {
+        alignItems: 'center',
+        paddingTop: 80,
+        paddingHorizontal: 32,
+    },
+
+    emptyTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: ADMIN.textDark,
+        marginTop: 16,
+        marginBottom: 8,
+    },
+
+    emptyMessage: {
+        fontSize: 14,
+        color: ADMIN.textGrey,
+        textAlign: 'center',
+        lineHeight: 22,
+    },
+
+})
