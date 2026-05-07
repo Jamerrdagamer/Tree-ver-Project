@@ -1,54 +1,50 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {
-    View,
+    ActivityIndicator,
+    ScrollView,
     Text,
     TextInput,
     TouchableOpacity,
-    StyleSheet,
-    ScrollView,
-    ActivityIndicator,
+    View
 } from 'react-native'
-import { supabase } from '../../lib/supabase'
+
 import { COLOURS } from '../../constants/theme'
+import { supabase } from '../../lib/supabase'
 
 export default function Login({ navigation }) {
-
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
+    function validateInputs() {
+        if (!email || !password) {
+            setError('Please fill in all fields.')
+            return false
+        }
 
-    import React, { useState } from 'react'
-    import {
-        View,
-        Text,
-        TextInput,
-        TouchableOpacity,
-        StyleSheet,
-        ScrollView,
-        ActivityIndicator,
-    } from 'react-native'
-    import { supabase } from '../../lib/supabase'
-    import { COLOURS } from '../../constants/theme'
+        if (!email.includes('@')) {
+            setError('Please enter a valid email.')
+            return false
+        }
 
+        return true
+    }
 
     async function handleLogin() {
         setError('')
 
-        if (!validateInputs()) {
-            return
-        }
+        if (!validateInputs()) return
 
         setLoading(true)
 
         try {
-            // log in using Supabase
-            const { error: signInError } = await supabase.auth.signInWithPassword({
-                email: email,
-                password: password,
-            })
+            const { error: signInError } =
+                await supabase.auth.signInWithPassword({
+                    email,
+                    password,
+                })
 
             if (signInError) {
                 setError('Incorrect email or password.')
@@ -56,6 +52,8 @@ export default function Login({ navigation }) {
                 return
             }
 
+            // success → go to home (change route if needed)
+            navigation.replace('Home')
 
         } catch (err) {
             setError('Something went wrong.')
@@ -64,16 +62,13 @@ export default function Login({ navigation }) {
         setLoading(false)
     }
 
-
     return (
         <ScrollView
             style={styles.scrollView}
             contentContainerStyle={styles.scrollContent}
             keyboardShouldPersistTaps="handled"
         >
-
             <Text style={styles.appTitle}>Tree-Ver</Text>
-
 
             {error ? (
                 <View style={styles.errorBox}>
@@ -114,31 +109,25 @@ export default function Login({ navigation }) {
                 </TouchableOpacity>
             </View>
 
-
             <TouchableOpacity
                 style={styles.button}
                 onPress={handleLogin}
                 disabled={loading}
             >
                 {loading ? (
-                    <ActivityIndicator color="#FFFFFF" />
+                    <ActivityIndicator color="#fff" />
                 ) : (
                     <Text style={styles.buttonText}>Log In</Text>
                 )}
             </TouchableOpacity>
 
             <TouchableOpacity
-                style={styles.linkRow}
                 onPress={() => navigation.navigate('Register')}
             >
                 <Text style={styles.linkText}>
-                    Don't have an account?{' '}
-                    <Text style={styles.linkHighlight}>Sign up</Text>
+                    Don't have an account? <Text style={styles.linkHighlight}>Sign up</Text>
                 </Text>
             </TouchableOpacity>
-
         </ScrollView>
     )
 }
-
-
