@@ -2,6 +2,12 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Environment Variables
+
+You must create a `.env` file in the root of the project for all APIs, Supabase services, authentication, and database connections to function correctly.
+
+Please refer to the **User Manual – Appendix A** for the required environment variable values and setup instructions.
+
 ## Get started
 
 1. Install dependencies
