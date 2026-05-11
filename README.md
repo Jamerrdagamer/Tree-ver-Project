@@ -8,6 +8,11 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
    ```bash
    npm install
+   npx expo install react-native-maps
+   npx expo install react-native-qrcode-svg react-native-svg
+   npx expo install expo-image-picker expo-location expo-file-system expo-image
+   npm install base64-arraybuffer
+   npm install @supabase/supabase-js @react-native-async-storage/async-storage
    ```
 
 2. Start the app
